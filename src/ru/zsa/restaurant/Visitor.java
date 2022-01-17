@@ -1,7 +1,7 @@
 package ru.zsa.restaurant;
 
 public class Visitor extends Thread{
-    private Restaurant restaurant;
+    private final Restaurant restaurant;
 
     public Visitor(String name, Restaurant restaurant) {
         super(name);
