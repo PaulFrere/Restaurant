@@ -15,7 +15,7 @@ public class Restaurant {
             }catch (InterruptedException e) {}
         }
         System.out.println(Thread.currentThread().getName() + " делает заказ.");
-        
+
         System.out.println("Приступил к еде.");
         count++;
     }
