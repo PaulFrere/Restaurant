@@ -1,10 +1,17 @@
 package ru.zsa.restaurant;
 
 public class Waiter extends Thread{
-    private Restaurant restaurant;
+    private final Restaurant restaurant;
+    private final String surname;
+    private final int age;
+    private final int experience;
 
-    public Waiter(String name, Restaurant restaurant){
+
+    public Waiter(String name, String surname, int age, int experience, Restaurant restaurant){
         super(name);
+        this.surname = surname;
+        this.age = age;
+        this.experience = experience;
         this.restaurant = restaurant;
     }
     @Override
