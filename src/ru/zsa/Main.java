@@ -3,6 +3,7 @@ package ru.zsa;
 import ru.zsa.restaurant.Restaurant;
 import ru.zsa.restaurant.Visitor;
 import ru.zsa.restaurant.Waiter;
+import ru.zsa.restaurant.WaiterBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,15 +24,27 @@ public class Main {
         visitors.add(new Visitor("Елена", restaurant));
         visitors.add(new Visitor("Татьяна", restaurant));
 
-        List<Waiter> waiters = new ArrayList<>(2);
-        waiters.add(new Waiter("Дмитрий", restaurant));
-        waiters.add(new Waiter("Денис", restaurant));
+        
+        Waiter waiter1 = new WaiterBuilder()
+                .setName("Дмитрий")
+                .setSurname("Иванов")
+                .setAge(25)
+                .setExperience(6)
+                .build();
+
+        Waiter waiter2 = new WaiterBuilder()
+                .setName("Денис")
+                .setSurname("Петров")
+                .setAge(23)
+                .setExperience(7)
+                .build();
+        
+        waiter1.start();
+        waiter2.start();
 
         for (Visitor visitor : visitors){
             visitor.start();
         }
-        for (Waiter waiter : waiters){
-            waiter.start();
-        }
+        
     }
 }
