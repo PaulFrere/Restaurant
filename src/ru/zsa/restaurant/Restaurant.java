@@ -1,7 +1,7 @@
 package ru.zsa.restaurant;
 
 public class Restaurant {
-    private int count = 3;
+    private int count = 2;
 
     public synchronized void makeOrder(){
         try {
@@ -17,6 +17,9 @@ public class Restaurant {
         System.out.println(Thread.currentThread().getName() + " делает заказ.");
 
         System.out.println("Приступил к еде.");
+    }
+    public synchronized void executeOrder(){
+        System.out.println(Thread.currentThread().getName() + " выполнил заказ.");
         count++;
     }
     public synchronized void payBill(){
@@ -34,6 +37,10 @@ public class Restaurant {
         count++;
         System.out.println("Расплатился и ушел сытым");
         notifyAll();
+    }
+    public synchronized void bringBill(){
+        System.out.println(Thread.currentThread().getName() + " принес счет.");
+        count++;
     }
 
 }

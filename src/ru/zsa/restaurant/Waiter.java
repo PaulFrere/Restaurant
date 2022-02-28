@@ -10,8 +10,8 @@ public class Waiter extends Thread{
     @Override
     public void run(){
         for (int i = 0; i<2; i++){
-            restaurant.makeOrder();
-            restaurant.payBill();
+            restaurant.executeOrder();
+            restaurant.bringBill();
         }
     }
 }
